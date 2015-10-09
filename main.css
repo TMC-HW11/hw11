@@ -1,0 +1,97 @@
+html {
+  font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'comic_zine_otregular', sans-serif;
+  font-size: 75px;
+  color: black;
+}
+
+body {
+color: black;
+}
+
+h5 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin-top: 5px;
+  text-decoration: underline;
+}
+
+input, textarea {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.logout {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+button.logout {
+  top: 50px;
+}
+
+#username {
+  margin-top: 0;
+}
+
+/* Application Styles */
+
+#user-view {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 90%;
+}
+
+#unassigned-tasks-view, #users-tasks-view {
+  float: left;
+  width: 47%;
+  border: 1px #fff solid;
+  border-radius: 3px;
+  padding: 5px .5% 0 .5%;
+  margin: 0 .5%;
+  background:rgba(0,0,0,0.7);
+}
+
+#new-task {
+  float: right;
+  margin-top: -45px;
+}
+
+#new-task {
+  margin-left: 50px;
+}
+
+#create-task-view {
+  border: 1px #fff solid;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background:rgba(0,0,0,0.5);
+}
+
+#task-view {
+  border: 1px #fff solid;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 5px 0;
+  background:rgba(0,0,0,0.5);
+}
+
+/* Alerts */
+
+.error {
+  color: gold;
+}
+
+.success {
+  color: #89dd1c;
+}
