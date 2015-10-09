@@ -5,6 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// Orchestrate vars
+//var config = require('./config');
+//var orch = require('orchestrate');
+//var db = orch(config.dbkey);
+var usersList = require('./users.json');
 var routes = require('./routes/login');
 var users = require('./routes/users');
 
