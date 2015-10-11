@@ -63,7 +63,7 @@ function makeRoutes(collname) {
 	getAll(collname);
 }
 
-Object.keys(database).forEach(makeRoutes);
+//Object.keys(database).forEach(makeRoutes);
 
 app.listen(3000);
-Object.keys(database).forEach(showData);
+//Object.keys(database).forEach(showData);

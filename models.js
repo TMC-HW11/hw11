@@ -5,9 +5,8 @@ var FakeTwitter = (function() {
   // ----------------------------------------------------------------------------
   // Users
   // ----------------------------------------------------------------------------
-
   var User = Backbone.Model.extend({
-  	defaults: {
+    defaults: {
   		username: '',
       password: '',
         bio: ''
@@ -42,14 +41,21 @@ var FakeTwitter = (function() {
     }
   });
 
+var myPosts = Backbone.Collection.extend({
+  model: myPosts,
+});
+
+var recentPosts = Backbone.Collection.extend({
+model: recentPosts,
+});
+
   // ----------------------------------------------------------------------------
   // Module
-  // ----------------------------------------------------------------------------
-
+  // ---------------------------------------------------------------------------
   return {
     User: User,
     //Profile: Profile,
-    Tweets: Tweets
-  };
-
+    Tweets: Tweets,
+    myPosts: myPosts
+   };
 })();

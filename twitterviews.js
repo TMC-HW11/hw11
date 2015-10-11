@@ -1,3 +1,5 @@
+'use strict';
+
 var UserView = (function () {
 //Tweet
 var Tweet = Backbone.View.extend({
@@ -5,9 +7,9 @@ var Tweet = Backbone.View.extend({
   render: function() {
     console.log('Collection: ' + app.tweets);
     console.log(this.model);
-    //var text = '<p class="description">' + this.model.get("text") + '</p>';
-    //var author = '<h5 class="creator">Creator: ' + this.model.get('author') + '</h5>';
-    //this.$el.html(text + creator);
+    var text = '<p class="description">' + this.model.get("text") + '</p>';
+    var author = '<h5 class="creator">Creator: ' + this.model.get('author') + '</h5>';
+    this.$el.html(text + author);
     }
   });
 
@@ -18,6 +20,7 @@ id: 'create-post-view',
 render: function() {
   var header = '<h2>Create Post</h2>';
   var textBox = '<textarea id="description-input"></textarea>';
+  var text = '<input type="text" id="text-input">';
   var submit = '<button id="tweet">Tweet!</button>';
   var cancel = '<button id="cancel-task">Cancel</button>';
   this.$el.html(header + textBox + submit + cancel);
@@ -27,13 +30,11 @@ events : {
   'click #cancel-task': 'clear'
 },
   addModel: function() {
-    console.log($('#description-input').val());
-    console.log(this.collection);
-    // var tweetModel = this.collection.add({ text : $('#text-input').val()});
-    // tweetModel.save();
-    // var text = '<p class="description">' + this.model.get('text') + '</p>';
-    // var creator = '<h5 class="creator">Creator: ' + this.model.get('creator') + '</h5>';
-    // this.$el.html(text + creator);
+    var tweetModel = this.collection.add({ text : $('#text-input')});
+    tweetModel.save();
+    var text = '<p class="description">' + this.model.get('text') + '</p>';
+    var creator = '<h5 class="creator">Creator: ' + this.model.get('creator') + '</h5>';
+    self.$el.html(text + creator);
     }
 });
 
@@ -53,15 +54,14 @@ console.log('hi from recentpostsview');
     }, this);
   },
   initialize : function () {
-    this.collection.on('add', this.render, this);
-    this.collection.on('remove', this.render, this);
-    this.collection.on('change', this.render, this);
+    // this.collection.on('add', this.render, this);
+    // this.collection.on('remove', this.render, this);
+    // this.collection.on('change', this.render, this);
   }
 });
 
 
   function UserView(users,tweets,el) {
-
     var recentPostsView = new RecentPostsView({ collection: tweets });
 
     var createPostView = new CreatePostView({collection: tweets});
@@ -69,17 +69,17 @@ console.log('hi from recentpostsview');
     $('#app').append(createPostView.$el);
 
   }
-var userSkeleton = Backbone.collection.extend {
+var userSkeleton = Backbone.Collection.extend ({
+//model: User
+});
 
-}
+var recentPostsSkeleton = Backbone.Collection.extend ({
+//model: recentPosts
+});
 
-var recentPostsSkeleton = Backbone.collection.extend {
-
-}
-
-var myPostsSkeleton = Backbone.collection.extend{
-  
-}
+var myPostsSkeleton = Backbone.Collection.extend({
+//model: myPosts
+});
 
   return UserView;
 })();
