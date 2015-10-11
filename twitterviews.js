@@ -32,9 +32,6 @@ events : {
   addModel: function() {
     var tweetModel = this.collection.add({ text : $('#text-input')});
     tweetModel.save();
-    var text = '<p class="description">' + this.model.get('text') + '</p>';
-    var creator = '<h5 class="creator">Creator: ' + this.model.get('creator') + '</h5>';
-    self.$el.html(text + creator);
     }
 });
 

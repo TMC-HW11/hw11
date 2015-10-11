@@ -29,7 +29,8 @@ var FakeTwitter = (function() {
   	defaults: {
   		text: '',
   		author: '',
-      timeStamp: ''
+      timeStamp: '',
+      creator: ''
   	}
   });
 
@@ -37,7 +38,7 @@ var FakeTwitter = (function() {
   	model: Tweet,
     url: '/tweets',
     initialize: function() {
-      // this.fetch();
+      this.fetch();
     }
   });
 
